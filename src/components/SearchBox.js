@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./SearchBox.module.css"
 import SearchTag from "./SearchTag.js"
-import { addTodo } from "../redux/ActionCreater";
+//import { addTodo } from "../redux/ActionCreater";
 class SearchBox extends React.Component {
     constructor(props) {
         super()
@@ -18,7 +18,7 @@ class SearchBox extends React.Component {
             
             if (!this.state.sList.includes(this.state.searchTxt)){
                 this.state.sList.push(this.state.searchTxt);
-                dispatch(addTodo(text))
+                //dispatch(addTodo(text))
                 this.setState({searchTxt:""})
                 //alert('this is:', this.state.searchTxt);
             }
