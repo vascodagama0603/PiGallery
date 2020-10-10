@@ -1,0 +1,24 @@
+.card {
+  color: black;
+  padding: 40px;
+  font-family: Akrobat;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 2px 16px;
+  border-radius: 5px;
+  background: #d4e1fd;
+  margin: 30px auto;
+  width: 350px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 15px;
+}
+
+.title{
+  font-size: 1rem;
+}
+

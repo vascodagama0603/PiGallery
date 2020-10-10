@@ -1,0 +1,30 @@
+.tag {
+  text-align:center;
+  margin:  0 auto;
+  background-color:#49a9d4;
+  border-radius:5px;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 1.8em;
+  overflow: hidden;
+  margin:  0 auto;
+  display: inline-flex;
+}
+.tag_txt{
+  
+}
+.tag_btn{
+  cursor: pointer;
+  font-family: FontAwesome;
+  border: none;
+  border-radius: 20%;
+  background: #3879D9;
+  color: #fff;
+  outline : none;
+  width: 1.0em;
+  height: 1.0em;
+  padding: 2px 2px;
+}

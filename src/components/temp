@@ -1,0 +1,13 @@
+const IndexPage = () => (
+  <StaticQuery
+    query={query}
+    render={data => (
+      <ul>
+        {data.allStrapiPurpose.edges.map(restaurant => (
+          <li key={restaurant.node.id}>{restaurant.node.id}{restaurant.node.url}</li>
+          
+        ))}
+      </ul>
+    )}
+  />
+);
