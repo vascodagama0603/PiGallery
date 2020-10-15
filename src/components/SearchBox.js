@@ -22,7 +22,7 @@ class SearchBox extends React.Component {
                 this.setState({searchTxt:""})
                 //alert('this is:', this.state.searchTxt);
             }
-            console.log(this.state.sList)
+            //console.log(this.state.sList)
         }
     }
     changeValue(e){
@@ -31,15 +31,16 @@ class SearchBox extends React.Component {
     render(){
         return(
             <>
-                <form method="get" action="#" className={styles.search_container}>
+                <div className={styles.search_container}>
                     <input 
+                        
                         type="text" 
                         size="25" 
                         value={this.state.searchTxt}
                         placeholder="キーワード検索" 
                         onKeyPress={(e) => this.handleClick(e)} 
                         onChange={(e) => this.changeValue(e)}/>
-                </form>
+                </div>
                 {this.state.sList.map(tag => (
                     <SearchTag
                         Name = {tag}

@@ -37,7 +37,7 @@ const IndexPage = ({data}) => (
         
         <div className={styles.card}>
 
-          <Link to="/page-2/" style={{ textDecoration: 'none', color: 'Black' }}>
+          <Link to={purpose.node.id} style={{ textDecoration: 'none', color: 'Black' }}>
           <PurposeCard
             style={{"display": "block"}}
             purpose={purpose.node}
