@@ -27,16 +27,29 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-source-strapi`,
-      options: {
-        apiURL: `https://aqueous-crag-75497.herokuapp.com`,
-        contentTypes: [
-          `purpose`,
-        ],
-        queryLimit: 1000,
-      },
+//    {
+ //     resolve: `gatsby-source-strapi`,
+ //     options: {
+ //       apiURL: `https://aqueous-crag-75497.herokuapp.com`,
+ //       contentTypes: [
+  //        `purpose`,
+   //       'sale',
+   //       'spec'
+   //     ],
+   //     queryLimit: 1000,
+   //   },
+   // },
+   {
+    resolve: "gatsby-source-graphql",
+    options: {
+      // Arbitrary name for the remote schema Query type
+      typeName: "QLdata",
+      // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+      fieldName: "QLdata",
+      // Url to query from
+      url: "https://aqueous-crag-75497.herokuapp.com/graphql",
     },
+  }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

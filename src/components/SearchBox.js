@@ -13,7 +13,7 @@ class SearchBox extends React.Component {
         }
       }
     handleClick(e) {
-        if (e.which == 13) { //Enter keycode                        
+        if (e.which === 13) { //Enter keycode                        
             
             
             if (!this.state.sList.includes(this.state.searchTxt)){

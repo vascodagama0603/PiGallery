@@ -23,41 +23,32 @@ exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
   // **Note:** The graphql function call returns a Promise
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
-  const result = await graphql(`
+  const { data } = await graphql(`
   query {
-    allStrapiPurpose {
-      edges {
-        node {
-          id
-          url
-          title
-          discription
-          specs{
-            id
-            name
-          }
-          fields {
-            slug
-          }
-        }
+    QLdata {
+      purposes {
+        id
+        title
       }
     }
   }
   `)
-  //console.log(JSON.stringify(result, null, 4))
+  //console.log(JSON.stringify(data, null, 4))
 
 
-result.data.allStrapiPurpose.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/templates/product.js`),
-      context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
-        slug: node.fields.slug,
-        id:node.id
-      },
+  data.QLdata.purposes.forEach(({id, title }) => {
+      console.log("AAA",id)
+      
+      createPage({
+        path: id,
+        component: path.resolve(`./src/templates/product.js`),
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          blogId:id
+        },
+      })
+      
     })
-  })
-  
+    
 }
