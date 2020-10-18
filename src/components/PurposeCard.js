@@ -13,15 +13,23 @@ class PurposeCard extends React.Component {
       
     render(){
         var img = ""
+        var amt = 0
         if(this.props.purpose.images.length!=0){
             img = this.props.purpose.images[0].url
             console.log(img)
     }
+        if(amt==0){this.props.purpose.specs.map(spec=>(
+            spec.sales.map(sale=>(
+                amt += Number(sale.price)
+            ))))}
         return(
             <>
             <Link to={this.props.purpose.id} style={{ textDecoration: 'none', color: 'Black' }}>
             <p className={styles.title}>{this.props.purpose.title}</p>
-            <p className={styles.amount}>1000円</p>
+            <p className={styles.amount}>
+                
+                    ￥{Number(amt).toLocaleString()}
+                    </p>
             
             <div >
                 <p className={styles.item}>アイテム数:{this.props.purpose.specs.length}点</p>            

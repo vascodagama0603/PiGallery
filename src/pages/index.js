@@ -21,6 +21,9 @@ query {
       specs{
         id
         name
+        sales{
+          price
+        }
       }
     }
   }
@@ -36,18 +39,12 @@ const IndexPage = ({data}) => (
     */}
     <div className={styles.grid}>
     {data.QLdata.purposes.map(purpose => (
-      
-        
         <div className={styles.card}>
-
-          
           <PurposeCard
             style={{"display": "block"}}
             purpose={purpose}
           />
-        </div>
-      
-      
+        </div> 
     ))}
     </div>
   </>);
