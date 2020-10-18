@@ -2,7 +2,7 @@ import React from "react"
 import { graphql,Link} from "gatsby"
 import SpecList from "./SpecList"
 import ImageSlides from "./ImageSlides"
-
+import Header from "../components/header"
 export default function BlogPost({ data }) {
   var purpose = data.QLdata.purpose
   var numString = '12345';
@@ -13,6 +13,9 @@ export default function BlogPost({ data }) {
     ))))}
   return (
     <div>
+      <Header
+      siteTitle="PiGallery"
+    />
         <h1>
           <Link to ={purpose.url}>{purpose.title}</Link> 
         </h1>
