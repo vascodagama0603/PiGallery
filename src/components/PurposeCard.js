@@ -1,5 +1,7 @@
 import React from "react"
+import {Link} from "gatsby"
 import styles from "./PurposeCard.module.css"
+import ImageSlides from "../templates/ImageSlides"
 class PurposeCard extends React.Component {
     constructor(props) {
         super()
@@ -17,16 +19,22 @@ class PurposeCard extends React.Component {
     }
         return(
             <>
-            
+            <Link to={this.props.purpose.id} style={{ textDecoration: 'none', color: 'Black' }}>
             <p className={styles.title}>{this.props.purpose.title}</p>
             <p className={styles.amount}>1000円</p>
+            
             <div >
                 <p className={styles.item}>アイテム数:{this.props.purpose.specs.length}点</p>            
                 <p className={styles.favorite}>♡</p>
-                <img src={img}  />
+
             </div>
-            <p>📎{this.props.purpose.url}</p>
+            </Link>
+            <ImageSlides
+                    imgs = {this.props.purpose.images}
+                />
+            <Link to={this.props.purpose.id} style={{ textDecoration: 'none', color: 'Black' }}>
             <p>{this.props.purpose.discription}</p>
+            </Link>
             </>
         )
         }

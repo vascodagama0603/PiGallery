@@ -10,7 +10,7 @@ import styles from "./index.module.css"
 export const query = graphql`
 query {
   QLdata {
-    purposes {
+    purposes(sort: "updated_at:DESC")  {
       images{
         url
       }
@@ -40,12 +40,11 @@ const IndexPage = ({data}) => (
         
         <div className={styles.card}>
 
-          <Link to={purpose.id} style={{ textDecoration: 'none', color: 'Black' }}>
+          
           <PurposeCard
             style={{"display": "block"}}
             purpose={purpose}
           />
-          </Link>
         </div>
       
       

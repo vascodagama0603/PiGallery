@@ -27,18 +27,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-//    {
- //     resolve: `gatsby-source-strapi`,
- //     options: {
- //       apiURL: `https://aqueous-crag-75497.herokuapp.com`,
- //       contentTypes: [
-  //        `purpose`,
-   //       'sale',
-   //       'spec'
-   //     ],
-   //     queryLimit: 1000,
-   //   },
-   // },
    {
     resolve: "gatsby-source-graphql",
     options: {
@@ -48,6 +36,7 @@ module.exports = {
       fieldName: "QLdata",
       // Url to query from
       url: "https://aqueous-crag-75497.herokuapp.com/graphql",
+      refetchInterval: 6000,
     },
   }
     // this (optional) plugin enables Progressive Web App + Offline functionality

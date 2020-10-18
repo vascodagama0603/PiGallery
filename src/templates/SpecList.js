@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Link } from "gatsby"
 export default class SpecList extends React.Component {
     constructor(props) {
         super()
@@ -7,16 +7,21 @@ export default class SpecList extends React.Component {
       render(){
         return(
             <>
-                <li>
+                <h2>
                     {this.props.spec}
-                </li>
+                </h2>
                 {this.props.sales.map(sale=>(
                     <>
-                    <div>
-                        　{sale.price}
+                    <div style={{display: "block"}} >
+                        <div style={{margin:"1rem"}}>
+                    　￥{Number(sale.price).toLocaleString()}
+                        </div>
+                        <div style={{margin:"1rem"}}>
+                        <Link to={sale.url}>AMAZONリンク</Link>
+                        </div>
                     </div>
                     <div>
-                        　　{sale.url}
+                        　　
                     </div>
                     </>
                 ))}

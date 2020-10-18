@@ -21,30 +21,23 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
-  // **Note:** The graphql function call returns a Promise
-  // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
   const { data } = await graphql(`
   query {
     QLdata {
-      purposes {
+      purposes(sort: "updated_at:DESC") {
         id
         title
+        updated_at
       }
     }
   }
   `)
   //console.log(JSON.stringify(data, null, 4))
-
-
   data.QLdata.purposes.forEach(({id, title }) => {
-      console.log("AAA",id)
-      
       createPage({
         path: id,
         component: path.resolve(`./src/templates/product.js`),
         context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
           blogId:id
         },
       })

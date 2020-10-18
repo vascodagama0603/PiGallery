@@ -1,21 +1,30 @@
 import React from "react"
-import { graphql} from "gatsby"
+import { graphql,Link} from "gatsby"
 import SpecList from "./SpecList"
+import ImageSlides from "./ImageSlides"
+
 export default function BlogPost({ data }) {
   var purpose = data.QLdata.purpose
+  var numString = '12345';
+  Number(numString).toLocaleString(); // "12,345"
   return (
     <div>
-
-        <h1>タイトル</h1>
-        <h2> {purpose.title}</h2>
-        <h1>ブログURL</h1>
-        <h2> 　{purpose.url}</h2>
-        <h1>内容</h1>
+        <h1>
+          <Link to ={purpose.url}>{purpose.title}</Link> 
+        </h1>
         <h2> 　{purpose.discription}</h2>
-        {purpose.images.map(img=>(
+        <ImageSlides
+          imgs = {purpose.images}
+          
+          />
+        {/*
+          purpose.images.map(img=>(
           <div><img src={img.url}  /></div>
           
-        ))}
+        ))*/
+        }
+        <h1>金額</h1>
+        <h2>￥{Number(numString).toLocaleString()}</h2>
         <h1>部品</h1>
         {purpose.specs.map(spec=>(
           <SpecList
@@ -27,6 +36,8 @@ export default function BlogPost({ data }) {
     </div>
   )
 }
+
+
 export const query = graphql`
   query($blogId: ID!) {
     QLdata {
