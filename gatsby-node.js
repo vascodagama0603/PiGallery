@@ -11,7 +11,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `StrapiPurpose`) {
     const slug = node.id
-    console.log(slug)
+    //console.log(slug)
     createNodeField({
       node,
       name: `slug`,

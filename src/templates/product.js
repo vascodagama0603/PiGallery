@@ -5,7 +5,6 @@ import ImageSlides from "./ImageSlides"
 import Header from "../components/header"
 export default function BlogPost({ data }) {
   var purpose = data.QLdata.purpose
-  var numString = '12345';
   var amt =0;
   if(amt==0){purpose.specs.map(spec=>(
     spec.sales.map(sale=>(
@@ -14,7 +13,7 @@ export default function BlogPost({ data }) {
   return (
     <div>
       <Header
-      siteTitle="PiGallery"
+      siteTitle="Raspberry Pi Gallery"
     />
         <h1>
           <Link to ={purpose.url}>{purpose.title}</Link> 
@@ -57,6 +56,7 @@ export const query = graphql`
         }
         specs{
           name
+          isCheck
           sales{
             price
             url

@@ -23,8 +23,10 @@ query {
       specs{
         id
         name
+        isCheck
         sales{
           price
+          url
         }
       }
     }
@@ -40,13 +42,14 @@ const IndexPage = ({data}) => (
     </div>
     */}
     <Header
-      siteTitle="PiGallery"
+      siteTitle="Raspberry Pi Gallery"
     />
     <SEO title="Home" />
     <div className={styles.grid}>
     {data.QLdata.purposes.map(purpose => (
         <div className={styles.card}>
           <PurposeCard
+            key = {purpose.title}
             style={{"display": "block"}}
             purpose={purpose}
           />

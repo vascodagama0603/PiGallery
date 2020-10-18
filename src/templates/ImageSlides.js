@@ -28,7 +28,7 @@ export default class ImageSlies extends React.Component {
     
            });
           });
-          console.log("images",imagesStore)
+          //console.log("images",imagesStore)
           this.setState({
             images: imagesStore
           })
@@ -36,7 +36,6 @@ export default class ImageSlies extends React.Component {
         return(
             <>
             <div  style={style}>
-                {console.log(this.state.images)}
                 <ImageGallery 
                 items={this.state.images}
                 showThumbnails={false}

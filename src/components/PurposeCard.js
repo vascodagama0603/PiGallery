@@ -6,37 +6,57 @@ class PurposeCard extends React.Component {
     constructor(props) {
         super()
         this.state={
-            mainImg: "",
-            sList: [],
+            sList: props.purpose.specs,
+            chkindex:0,
+            amt:0,
+            specNum:0
         }
       }
-      
-    render(){
-        var img = ""
-        var amt = 0
-        if(this.props.purpose.images.length!=0){
-            img = this.props.purpose.images[0].url
-            console.log(img)
+    componentDidMount(){
+        var amtA = 0
+        var specNumA =0
+        this.state.sList.map(spec=>{
+            if(spec.isCheck){
+                spec.sales.map(sale=>{
+                    amtA+=Number(sale.price)
+                    specNumA+=1
+                })
+            }
+            console.log("amtA",amtA)
+        })
+        this.setState({amt:amtA})
+        this.setState({specNum:specNumA})
+       
+
     }
-        if(amt==0){this.props.purpose.specs.map(spec=>(
-            spec.sales.map(sale=>(
-                amt += Number(sale.price)
-            ))))}
+    render(){
+        
         return(
             <>
+                                    
             <Link to={this.props.purpose.id} style={{ textDecoration: 'none', color: 'Black' }}>
             <p className={styles.title}>{this.props.purpose.title}</p>
-            <p className={styles.amount}>
-                
-                    ￥{Number(amt).toLocaleString()}
-                    </p>
-            
-            <div >
-                <p className={styles.item}>アイテム数:{this.props.purpose.specs.length}点</p>            
-                <p className={styles.favorite}>♡</p>
-
-            </div>
             </Link>
+            <div>
+                <p className={styles.item}>アイテム数:{this.state.specNum}点</p>      
+                <p className={styles.amount}>
+                        ￥{Number(this.state.amt).toLocaleString()}
+                </p>
+                {this.state.sList.map((spec,index)=>
+                    <>
+                        <div style={{display:"flex"}}>
+                            
+                            <input type="checkbox"
+                                defaultChecked={spec.isCheck}
+                                style={{marginRight:"1rem"}}
+                                onChange ={(e) => this.deleteRow(index)}
+                            />
+                            <Link to ={spec.sales[0].url}>{spec.name}</Link>
+                        </div>
+                    </>
+                    )}
+            </div>
+            
             <ImageSlides
                     imgs = {this.props.purpose.images}
                 />
@@ -46,13 +66,14 @@ class PurposeCard extends React.Component {
             </>
         )
         }
-}
-const mainImg = ()=>{
-    var url = ""
-    if(this.props.purpose.images!=null){
-        url = this.props.purpose.images[0].url
-        //console.log(this.props.purpose.images)
+    deleteRow(index){
+            const spec_copy = this.state.sList.slice();
+            console.log("spec_copy",spec_copy)
+            console.log("index",index)
+            spec_copy[index].isCheck = !spec_copy[index].isCheck
+            this.setState({sList: spec_copy})
+            this.componentDidMount()
     }
-    return url
 }
+var index = 0
 export default PurposeCard;
