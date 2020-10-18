@@ -6,7 +6,11 @@ import ImageSlides from "./ImageSlides"
 export default function BlogPost({ data }) {
   var purpose = data.QLdata.purpose
   var numString = '12345';
-  Number(numString).toLocaleString(); // "12,345"
+  var amt =0;
+  if(amt==0){purpose.specs.map(spec=>(
+    spec.sales.map(sale=>(
+        amt += Number(sale.price)
+    ))))}
   return (
     <div>
         <h1>
@@ -24,7 +28,7 @@ export default function BlogPost({ data }) {
         ))*/
         }
         <h1>金額</h1>
-        <h2>￥{Number(numString).toLocaleString()}</h2>
+        <h2>￥{Number(amt).toLocaleString()}</h2>
         <h1>部品</h1>
         {purpose.specs.map(spec=>(
           <SpecList
