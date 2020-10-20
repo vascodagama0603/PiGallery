@@ -1,6 +1,8 @@
 import React from "react"
 import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
+import styles from "./ImageSlies.module.css"
+import "./image-gallery.css"
 export default class ImageSlies extends React.Component {
     constructor(props) {
         super()
@@ -12,12 +14,6 @@ export default class ImageSlies extends React.Component {
     
         
       render(){
-        const style = {
-            //height: "100px",
-            margin: "0 auto",
-            marginTop: 10
-          };
-        //console.log("BBBB",this.props.imgs)
          if (this.state.images.length <= 0) {
           let imagesStore = [];
           let url = "";
@@ -28,14 +24,13 @@ export default class ImageSlies extends React.Component {
     
            });
           });
-          //console.log("images",imagesStore)
           this.setState({
             images: imagesStore
           })
          }
         return(
             <>
-            <div  style={style}>
+            <div className={styles.img}>
                 <ImageGallery 
                 items={this.state.images}
                 showThumbnails={false}
@@ -47,6 +42,3 @@ export default class ImageSlies extends React.Component {
         )
         }
     }
-
-
-    

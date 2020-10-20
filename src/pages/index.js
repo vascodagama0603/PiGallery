@@ -9,6 +9,7 @@ import { graphql } from 'gatsby';
 import styles from "./index.module.css"
 import Header from "../components/header"
 import SEO from "../components/seo"
+import "./indexCommon.css"
 export const query = graphql`
 query {
   QLdata {
@@ -41,20 +42,22 @@ const IndexPage = ({data}) => (
       <SearchBox />
     </div>
     */}
-    <Header
-      siteTitle="Raspberry Pi Gallery"
-    />
-    <SEO title="Home" />
-    <div className={styles.grid}>
-    {data.QLdata.purposes.map(purpose => (
-        <div className={styles.card}>
-          <PurposeCard
-            key = {purpose.title}
-            style={{"display": "block"}}
-            purpose={purpose}
-          />
-        </div> 
-    ))}
+    <div>
+      <Header
+        siteTitle="Raspberry Pi Gallery"
+      />
+      <SEO title="Home" />
+      <div className={styles.grid}>
+      {data.QLdata.purposes.map(purpose => (
+          <div className={styles.card}>
+            <PurposeCard
+              key = {purpose.title}
+              style={{"display": "block"}}
+              purpose={purpose}
+            />
+          </div> 
+      ))}
+      </div>
     </div>
   </>);
 

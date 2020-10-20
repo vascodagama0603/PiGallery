@@ -2,6 +2,7 @@ import React from "react"
 import {Link} from "gatsby"
 import styles from "./PurposeCard.module.css"
 import ImageSlides from "../templates/ImageSlides"
+import "./purposeCommon.css"
 class PurposeCard extends React.Component {
     constructor(props) {
         super()
@@ -9,8 +10,10 @@ class PurposeCard extends React.Component {
             sList: props.purpose.specs,
             chkindex:0,
             amt:0,
-            specNum:0
+            specNum:0,
+            hidediv: false
         }
+        this.txtClick = this.txtClick.bind(this)
       }
     componentDidMount(){
         var amtA = 0
@@ -29,40 +32,47 @@ class PurposeCard extends React.Component {
        
 
     }
+    txtClick(){
+        console.log("hidediv",this.state.hidediv)
+        this.setState({hidediv: !this.state.hidediv})
+    }
     render(){
         
         return(
             <>
-                                    
-            <Link to={this.props.purpose.id} style={{ textDecoration: 'none', color: 'Black' }}>
-            <p className={styles.title}>{this.props.purpose.title}</p>
-            </Link>
-            <div>
-                <p className={styles.item}>アイテム数:{this.state.specNum}点</p>      
-                <p className={styles.amount}>
-                        ￥{Number(this.state.amt).toLocaleString()}
-                </p>
-                {this.state.sList.map((spec,index)=>
-                    <>
-                        <div style={{display:"flex"}}>
-                            
-                            <input type="checkbox"
-                                defaultChecked={spec.isCheck}
-                                style={{marginRight:"1rem"}}
-                                onChange ={(e) => this.deleteRow(index)}
-                            />
-                            <Link to ={spec.sales[0].url}>{spec.name}</Link>
-                        </div>
-                    </>
-                    )}
+            <div className={styles.img}>
+                <ImageSlides
+                        imgs = {this.props.purpose.images}
+                    />
             </div>
-            
-            <ImageSlides
-                    imgs = {this.props.purpose.images}
-                />
-            <Link to={this.props.purpose.id} style={{ textDecoration: 'none', color: 'Black' }}>
-            <p>{this.props.purpose.discription}</p>
-            </Link>
+            <div className={styles.text}>
+                <Link to={this.props.purpose.id} style={{ textDecoration: 'none', color: 'Black' }}>
+                <p className={styles.title}>{this.props.purpose.title}</p>
+                <p className={styles.discription}>{this.props.purpose.discription}</p>
+                </Link>               
+                <div>
+                    <p className={styles.item} >部品数:{this.state.specNum}点</p>
+                    <button className={styles.btn} onClick={this.txtClick}>▼</button>
+                    <p className={styles.amount}>
+                            ￥{Number(this.state.amt).toLocaleString()}
+                    </p>
+                </div>
+                <div className={'hide-' + this.state.hidediv}>
+                    {this.state.sList.map((spec,index)=>
+                        <>
+                            <div style={{display:"table"}}>
+                                <input type="checkbox"
+                                    defaultChecked={spec.isCheck}
+                                    style={{marginRight:"1rem"}}
+                                    onChange ={(e) => this.deleteRow(index)}
+                                />
+                                <Link to ={spec.sales[0].url}>{spec.name}</Link>
+                            </div>
+                        </>
+                    )}
+                </div>
+
+            </div>
             </>
         )
         }

@@ -1,6 +1,6 @@
 .title{
   font-size: 1.7rem;
-  margin:1rem;
+  height: 40px;
 }
 .flex{
   display: -webkit-flex;
@@ -16,12 +16,37 @@
     color:green;
     font-weight: bold;
     font-size: 1.5rem;
+
 }
 
 .item {
    text-align: left;  /* 文章を左寄せする(※) */
    float: left;     /* 左端に寄せて、後続を右側へ回り込ませる */
 }
+.btn{
+  text-align: left;  /* 文章を左寄せする(※) */
+  float: left;     /* 左端に寄せて、後続を右側へ回り込ませる */
+  font-size:5px;
+  padding: 2px;
+  margin-left: 5px;
+}
 .favorite {
    text-align: right; /* 文章を右寄せする */
+}
+
+.img{
+  height: auto;
+  max-width: 100%;
+  margin: auto;
+  object-fit: cover;
+  
+}
+.text{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.discription{
+  font-size:70%;
+  color:#979696;
+  height: 40px;
 }
