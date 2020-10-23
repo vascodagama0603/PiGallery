@@ -51,7 +51,7 @@ const IndexPage = ({data}) => (
       />
       <div className ={styles.discriptionarea}>
       <div className={styles.discription}>
-      <h2><span>Raspberry Pi Galleryは</span><span>様々な</span><span>ブログの部品購入金額を</span><span>まとめたサイトです。</span></h2>
+      <h2>Raspberry Pi Galleryは様々なブログの部品や金額をまとめたサイトです。</h2>
       </div>
       </div>
       
