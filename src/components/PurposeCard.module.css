@@ -1,6 +1,8 @@
 .title{
   font-size: 1.7rem;
   height: 40px;
+  padding:5px;
+  font:bold;
 }
 .flex{
   display: -webkit-flex;
@@ -13,10 +15,12 @@
 .amount{
     text-align: right;
     font-family: akrobat-bold;
-    color:green;
+    color:red;
     font-weight: bold;
     font-size: 1.5rem;
-
+    padding-right: 20px;
+  /*  margin-left: auto;*/
+  /*   padding: 5px; */
 }
 
 .item {
@@ -44,9 +48,29 @@
 .text{
   padding-left: 20px;
   padding-right: 20px;
+  margin-top: 20px;
 }
 .discription{
-  font-size:70%;
+  font-size:100%;
   color:#979696;
-  height: 40px;
+  height: 60px;
+  padding:10px;
+}
+
+
+.figcaption {
+  text-align: right; /* 文章を右寄せする */
+  margin-right: 5px;
+  margin-left: 5px;
+  z-index: 0;
+  width: -webkit-fill-available;
+}
+
+.speclink{
+  color : #42a0f8;
+}
+
+.speclink:hover{
+  
+  color : #ff7043;
 }

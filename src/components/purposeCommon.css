@@ -2,4 +2,36 @@
     display: none;
   }
   .hide-ture  {
+    grid-row: span 2;
   }
+
+  /* 商品に見立てた枠 */
+.begin {
+  height: auto;
+  max-width: 100%;
+  margin: auto;
+  object-fit: cover;
+  position: relative;
+}
+
+/* ラベル部分 左上に表示 */
+.begin::before {
+  content: "";
+  top: 0;
+  left: 0;
+  border-bottom: 4em solid transparent;
+  border-left: 4em solid #c12748; /* ラベルの色はここで変更 */
+  position: absolute;
+  z-index: 100;
+}
+.begin::after {
+  content: "初級者";
+  display: block;
+  top: 12px;
+  transform: rotate(-45deg);
+  color: #fff; /* 文字色はここで変更 */
+  left: 2px;
+  position: absolute;
+  z-index: 101;
+  font-size: medium;
+}

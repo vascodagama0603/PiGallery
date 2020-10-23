@@ -36,7 +36,7 @@ module.exports = {
       fieldName: "QLdata",
       // Url to query from
       url: "https://aqueous-crag-75497.herokuapp.com/graphql",
-      refetchInterval: 6000,
+      refetchInterval: 60000,
     },
   }
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -6,21 +6,21 @@ const Header = ({ siteTitle }) => (
   <header
     style={{
       background: `black`,
-      marginBottom: `1.45rem`,
+      marginBottom: `0.5rem`,
     }}
   >
     <div
       style={{
         //margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `0.5rem 1.0875rem`,
       }}
     >
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: "gray",
             textDecoration: `none`,
           }}
         >
@@ -36,7 +36,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: `Raspberry Pi Gallery`,
 }
 
 export default Header

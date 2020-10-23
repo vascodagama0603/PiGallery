@@ -50,6 +50,7 @@ export const query = graphql`
       purpose(id: $blogId) {
         title
         url
+        rank
         discription
         images{
           url

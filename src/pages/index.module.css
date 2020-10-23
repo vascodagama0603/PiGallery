@@ -1,5 +1,5 @@
 .main{
-  background: #f7f7f7;
+  
 }
 .card {
   color: black;
@@ -7,15 +7,18 @@
   text-align: center;
  
   transition: 0.3s;
-  border-radius: 20px;
+  /*border-radius: 20%;*/
   background: white;
-  margin: 5px 20px;
+  margin: 5px auto;
   width: 320px;
   position: relative;
 }
 
 .grid {
   display: grid;
+  padding-top:10px;
+  background: #d2d7da;
+  border-radius: 5px;
   margin: auto;
   grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   
@@ -26,3 +29,8 @@
   height:40px;
 }
 
+.discription{
+  text-align: center;
+  width: 21em;
+  margin:auto;
+}

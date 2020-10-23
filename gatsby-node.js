@@ -5,6 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+/*
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -32,7 +33,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   }
   `)
-  //console.log(JSON.stringify(data, null, 4))
   data.QLdata.purposes.forEach(({id, title }) => {
       createPage({
         path: id,
@@ -45,3 +45,4 @@ exports.createPages = async ({ graphql, actions }) => {
     })
     
 }
+*/

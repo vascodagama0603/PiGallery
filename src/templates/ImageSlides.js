@@ -36,6 +36,7 @@ export default class ImageSlies extends React.Component {
                 showThumbnails={false}
                 showPlayButton={false}
                 showFullscreenButton={false}
+                lazyLoad={true}
                 />
                 </div>
             </>

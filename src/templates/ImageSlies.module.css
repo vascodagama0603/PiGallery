@@ -1,7 +1,5 @@
+/*
 .img{
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
   overflow: hidden;
 }
   
@@ -19,11 +17,10 @@
     width: 100%;
     height: auto;
     max-height: 80vh;
-    object-fit: cover;
-    overflow: hidden;
     object-position: center center;
 }
 
 .fullscreen .image-gallery-slide img {
     max-height: 100vh;
 }
+*/

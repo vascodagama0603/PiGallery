@@ -1,21 +1,13 @@
-.image-gallery {
-    height: auto;
-}
 
 .image-gallery-slide img {
     width: 100%;
     height: 200px;
-    max-height: 80vh;
-    object-fit: fill;
+    object-fit: cover;
     overflow: hidden;
     object-position: center center;
+    margin-bottom: 0;
 }
 
-.fullscreen .image-gallery-slide img {
-    max-height: 100vh;
-    width: 100%;
-    object-fit: fill;
-}
 
 .image-gallery-slide .image-gallery-image{
     object-fit: cover;

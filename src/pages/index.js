@@ -20,11 +20,13 @@ query {
       id
       url
       title
+      rank
       discription
       specs{
         id
         name
         isCheck
+        discription
         sales{
           price
           url
@@ -46,13 +48,15 @@ const IndexPage = ({data}) => (
       <Header
         siteTitle="Raspberry Pi Gallery"
       />
+      <div className={styles.discription}>
+      <h2 >Raspberry Pi Galleryは様々なブログの部品購入金額をまとめたサイトです。</h2>
+      </div>
       <SEO title="Home" />
       <div className={styles.grid}>
       {data.QLdata.purposes.map(purpose => (
-          <div className={styles.card}>
+          <div >
             <PurposeCard
               key = {purpose.title}
-              style={{"display": "block"}}
               purpose={purpose}
             />
           </div> 
