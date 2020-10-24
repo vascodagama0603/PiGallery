@@ -45,7 +45,8 @@ const IndexPage = ({data}) => (
       <SearchBox />
     </div>
     */}
-    <SEO title="Raspberry Pi Gallery" />
+    <SEO
+      title="Raspberry Pi Gallery"/>
     <div>
       <Header
         siteTitle="Raspberry Pi Gallery"

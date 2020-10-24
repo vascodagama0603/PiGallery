@@ -4,6 +4,18 @@ module.exports = {
     description: `様々なプロジェクトで使用した部品や金額をまとめたサイトです。`,
     moreinfo: `購入金額は日々変動しますのでご参考程度にしてください。`,
     author: `yoshitaka`,
+    siteUrl: `https://gallery.tecpi.xyz`,
+    samnale: 'src/images/sam.png',
+    social: [
+      {
+        name: `Twitter`,
+        url: `https://twitter.com/VascodagamaI`,
+      },
+      {
+        name: `GitHub`,
+        url: `https://github.com/vascodagama0603`,
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
