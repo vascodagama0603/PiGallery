@@ -74,6 +74,10 @@ function SEO({ description, lang, meta, title,image }) {
           property: "og:image",
           content: image || defaultImage,
         },
+        {
+          name:"google-site-verification" ,
+          content:"07Unxn1AYWlYHgT6POMPj5gMa3OkPDIfa_S3KRpOd1Y",
+        },
       ].concat(meta)}
     />
   )
