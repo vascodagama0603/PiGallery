@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Raspberry Pi Gallery`,
-    description: `ラズベリーパイに関する様々なブログで使用する部品や金額をまとめたサイトです。`,
+    title: `ラズパイのプロジェクトとその部品リスト紹介`,
+    description: `様々なプロジェクトで使用した部品や金額をまとめたサイトです。`,
+    moreinfo: `購入金額は日々変動しますのでご参考程度にしてください。`,
     author: `yoshitaka`,
   },
   plugins: [
@@ -24,7 +25,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
    {

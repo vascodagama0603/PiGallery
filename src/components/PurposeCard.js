@@ -21,30 +21,7 @@ import {Link} from "gatsby"
 import styles from "./PurposeCard.module.css"
 import ImageSlides from "../templates/ImageSlides"
 import "./purposeCommon.css"
-/*
-const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
-}));
-*/
+import Picture from "./Picture"
 class PurposeCard extends React.Component {
     constructor(props) {
         super()
@@ -102,13 +79,18 @@ class PurposeCard extends React.Component {
     render(){
         const rankCss = this.state.rank
         const classes=""
+        const imgId = this.props.purpose.images[0].id
     return (
+        
         <div style={{margin:"5px"}}>
             <Card className={classes.root}>
                 <div className={rankCss}>
+                    <Picture relativePath={imgId+".png"}/>
+                    {/*
                     <ImageSlides
                         imgs = {this.props.purpose.images}
                     />
+                    */}
                 </div>
                 
                 <CardActions disableSpacing style={{padding:"0"}}>

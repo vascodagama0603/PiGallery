@@ -16,6 +16,7 @@ query {
     purposes(sort: "updated_at:DESC")  {
       images{
         url
+        id
       }
       id
       url
@@ -44,15 +45,19 @@ const IndexPage = ({data}) => (
       <SearchBox />
     </div>
     */}
-    <SEO title="Home" />
+    <SEO title="Raspberry Pi Gallery" />
     <div>
       <Header
         siteTitle="Raspberry Pi Gallery"
       />
       <div className ={styles.discriptionarea}>
-      <div className={styles.discription}>
-      <h2>Raspberry Pi Galleryは様々なブログの部品や金額をまとめたサイトです。</h2>
-      </div>
+        <div className={styles.discription}>
+          <h2>Raspberry Pi Galleryは様々なブログの部品や金額をまとめたサイトです。</h2>
+          
+        </div>
+        <div className={styles.moreinfo}>
+          <p>部品の金額は日々変動しますのでご参考程度にしてください。</p>
+        </div>
       </div>
       
       <div className={styles.grid}>
