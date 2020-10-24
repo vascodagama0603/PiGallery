@@ -29,7 +29,7 @@ function SEO({ description, lang, meta, title,image }) {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-  const defaultImage = "https://res.cloudinary.com/dxpk8k2qc/image/upload/v1603557047/sam1_atuw6o.png"
+  const defaultImage = "https://res.cloudinary.com/dxpk8k2qc/image/upload/v1603557205/sam1_1_ig18iy.png"
   return (
     <Helmet
       htmlAttributes={{
