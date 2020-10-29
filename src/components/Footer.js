@@ -11,7 +11,7 @@ const Footer = ({ siteTitle }) => (
       style={{
         //margin: `0 auto`,
         maxWidth: 960,
-        padding: `0.5rem 1.0875rem`,
+        padding: `2.5rem 1.0875rem`,
       }}
     >      
     </div>
