@@ -8,6 +8,8 @@ import SearchBox from "../components/SearchBox";
 import { graphql } from 'gatsby';
 import styles from "./index.module.css"
 import Header from "../components/header"
+import Footer from "../components/Footer"
+import MainPage from "../components/MainPage"
 import SEO from "../components/seo"
 import "./indexCommon.css"
 export const query = graphql`
@@ -61,16 +63,10 @@ const IndexPage = ({data}) => (
         </div>
       </div>
       
-      <div className={styles.grid}>
-      {data.QLdata.purposes.map(purpose => (
-          <div >
-            <PurposeCard
-              key = {purpose.title}
-              purpose={purpose}
-            />
-          </div> 
-      ))}
-      </div>
+      <MainPage
+        purposes = {data.QLdata.purposes}
+      />
+      <Footer/>
     </div>
   </>);
 

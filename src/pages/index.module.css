@@ -1,27 +1,9 @@
 .main{
   
 }
-.card {
-  color: black;
-  font-family: Akrobat;
-  text-align: center; 
-  transition: 0.3s;
-  /*border-radius: 20%;*/
-  background: white;
-  margin: 5px auto;
-  width: 320px;
-  position: relative;
-}
 
-.grid {
-  display: grid;
-  padding-top:10px;
-  background: #d2d7da;
-  border-radius: 5px;
-  margin: auto;
-  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
-  
-}
+
+
 
 .title{
   font-size: 1rem;
@@ -46,3 +28,4 @@
   text-align: center;
   color: #a9aaac;
 }
+
