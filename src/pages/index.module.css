@@ -21,7 +21,6 @@
   display: flex;
   background: white;
   width: 100%;
-  height:13em;
   flex-direction: column;
 }
 .moreinfo{
